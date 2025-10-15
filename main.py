@@ -683,7 +683,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Polygon Tool",
-                                            style={"fontSize": "0.8rem"}
+                                            style={"fontSize": "0.8rem";display:none;}
                                         ),
                                         dbc.Button(
                                             [html.I(className="bi bi-square me-1"), "Rectangle"],
@@ -733,7 +733,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Eraser Tool",
-                                            style={"fontSize": "0.8rem"}
+                                            style={"fontSize": "0.8rem;display:none;"}
                                         ),
                                     ]
                                 ),
@@ -965,7 +965,7 @@ app.layout = html.Div(id="app-container", children=[
                                 html.I(className="bi bi-file-earmark-text me-1"),
                                 "Generate Report"
                             ], id="report-btn", color="primary", size="sm", className="w-100 mt-2",
-                            style={"fontWeight": "600", "padding": "8px", "fontSize": "0.8rem"}),
+                            style={"fontWeight": "600", "padding": "8px", "fontSize": "0.8rem","display":"none"}),
                             dcc.Download(id="download-annotation"),
                             dcc.Download(id="download-report")
                         ])
