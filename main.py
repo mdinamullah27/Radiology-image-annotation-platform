@@ -683,7 +683,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Polygon Tool",
-                                            style={"fontSize": "0.8rem";display:none;}
+                                            style={"fontSize": "0.8rem","display":"none"}
                                         ),
                                         dbc.Button(
                                             [html.I(className="bi bi-square me-1"), "Rectangle"],
@@ -733,7 +733,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Eraser Tool",
-                                            style={"fontSize": "0.8rem;display:none;"}
+                                            style={"fontSize": "0.8rem","display":"none"}
                                         ),
                                     ]
                                 ),
