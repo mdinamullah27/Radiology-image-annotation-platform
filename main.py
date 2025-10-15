@@ -583,7 +583,7 @@ def format_chat_text(text):
             children.append(html.Br())
     return children
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True,title="Radiology Annotation")
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True,title="Radiology Practice")
 server = app.server
 
 app.layout = html.Div(id="app-container", children=[
@@ -605,7 +605,7 @@ app.layout = html.Div(id="app-container", children=[
                            style={"fontWeight": "700", "fontSize": "1.5rem", "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                                   "WebkitBackgroundClip": "text", "WebkitTextFillColor": "transparent"}),
                     html.P("Radiology image annotation and analysis platform", 
-                           className="text-center mb-2 ", style={"font-size: 0.9rem; margin-right:120px;"})
+                           className="text-center mb-2", style={"fontSize": "0.9rem","marginRight": "120px"})
                 ])
             ])
         ]),
@@ -683,7 +683,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Polygon Tool",
-                                            style={"fontSize": "0.8rem","display":"none"}
+                                            style={"fontSize": "0.8rem","display": "none"}
                                         ),
                                         dbc.Button(
                                             [html.I(className="bi bi-square me-1"), "Rectangle"],
@@ -733,7 +733,7 @@ app.layout = html.Div(id="app-container", children=[
                                             size="sm",
                                             className="px-2",
                                             title="Eraser Tool",
-                                            style={"fontSize": "0.8rem","display":"none"}
+                                            style={"fontSize": "0.8rem","display": "none"}
                                         ),
                                     ]
                                 ),
@@ -965,7 +965,7 @@ app.layout = html.Div(id="app-container", children=[
                                 html.I(className="bi bi-file-earmark-text me-1"),
                                 "Generate Report"
                             ], id="report-btn", color="primary", size="sm", className="w-100 mt-2",
-                            style={"fontWeight": "600", "padding": "8px", "fontSize": "0.8rem","display":"none"}),
+                            style={"fontWeight": "600", "padding": "8px", "fontSize": "0.8rem","display": "none"}),
                             dcc.Download(id="download-annotation"),
                             dcc.Download(id="download-report")
                         ])
@@ -2441,4 +2441,4 @@ def refresh_radiopaedia_cases(n_clicks):
     return format_radiopaedia_cases(cases)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.1.238', port=8050)
+    app.run(debug=True, host='192.168.1.144', port=8050)
