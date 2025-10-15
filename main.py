@@ -601,11 +601,11 @@ app.layout = html.Div(id="app-container", children=[
                         value=False,
                         className="float-end"
                     ),
-                    html.H1("Medical Image Annotation Dashboard", className="text-center my-2", 
+                    html.H1("Radiology Image Annotation Dashboard", className="text-center my-2", 
                            style={"fontWeight": "700", "fontSize": "1.5rem", "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                                   "WebkitBackgroundClip": "text", "WebkitTextFillColor": "transparent"}),
-                    html.P("Medical image annotation and analysis platform", 
-                           className="text-center mb-2", style={"fontSize": "0.9rem"})
+                    html.P("Radiology image annotation and analysis platform", 
+                           className="text-center mb-2 ", style={"font-size: 0.9rem; margin-right:120px;"})
                 ])
             ])
         ]),
