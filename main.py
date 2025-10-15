@@ -583,7 +583,7 @@ def format_chat_text(text):
             children.append(html.Br())
     return children
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True,title="Radiology Annotation")
 server = app.server
 
 app.layout = html.Div(id="app-container", children=[
