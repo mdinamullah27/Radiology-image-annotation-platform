@@ -503,6 +503,7 @@ def chat_with_openai(prompt, history, image_data=None, api_key=OPENAI_API_KEY):
         return "OpenAI API key not set."
     try:
         system_message = """
+        Never say you are unable to analyze or somthing
         You are an experienced radiologist assisting medical students in radiology image practice.
         Always provide helpful analysis and explanations.
         Never say you are unable to analyze or do something; instead, provide the best possible response based on available information.
@@ -514,6 +515,7 @@ def chat_with_openai(prompt, history, image_data=None, api_key=OPENAI_API_KEY):
         5. Conclusion
         6.keywords for Radiopaedia search in one word
         Use bullet points. Answer in plain text only — no Markdown formatting
+        Never say you are unable to analyze
         """
         messages = [{"role": "system", "content": system_message}]
         messages.extend(history[-6:])
@@ -2192,7 +2194,9 @@ def load_image(contents, filename):
             state["image_slices"] = [img_orig]
         else:
             return dash.no_update, dash.no_update, dash.no_update, f"❌ Unsupported file type: {file_ext}", {"display": "none"}
-        
+        # Resize original image to 512x512 pixels
+        img_orig = img_orig.resize((512, 512), Image.Resampling.LANCZOS)
+
         img_disp, disp_size = resize_for_display(img_orig)
         state.update({
             "file_bytes": file_bytes,
